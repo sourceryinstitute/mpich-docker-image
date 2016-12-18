@@ -10,6 +10,7 @@ set -o pipefail
 set -o errexit
 set -x
 
+git fetch --all --tags --depth=9999999999 --update-shallow
 d_repo='sourceryinstitute/mpich-docker-image'
 d_git_remotes=($(git remote show))
 echo "${#d_git_remotes[@]} git remotes found."
