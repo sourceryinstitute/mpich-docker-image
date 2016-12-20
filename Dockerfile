@@ -10,7 +10,7 @@ WORKDIR /
 ENV MPI_HOME=/opt/mpich/3.1.4/gnu/6.2.1
 
 RUN  DEBIAN_FRONTEND=noninteractive \
-     && pwd \
+     && set -v \
      && echo "$DEBIAN_FRONTEND" \
      && cat /NOTICE \
      && /bin/bash -c 'wget -q -O - http://www.mpich.org/static/downloads/3.1.4/mpich-3.1.4.tar.gz | tee >(sha256sum -c /mpich-3.1.4-SHA256.txt >&2 ) | tar xzv -C /' \
@@ -52,10 +52,10 @@ RUN  DEBIAN_FRONTEND=noninteractive \
     ARG BUILD_DATE
     ARG VCS_REF
     ARG VCS_URL
-    ARG VCS_VERSION=1.0
+    ARG VCS_VERSION=latest
     LABEL org.label-schema.schema-version="1.0" \
           org.label-schema.build-date="$BUILD_DATE" \
-	  org.label-schema.version="1.0" \
+	  org.label-schema.version="$VCS_VERSION" \
           org.label-schema.name="mpich-docker-image" \
           org.label-schema.description="Lightweight image with gcc and mpich 3.1.4" \
           org.label-schema.url="https://github.com/sourceryinstitute/mpich-docker-image/" \
