@@ -42,6 +42,7 @@ Current Packages
 ----------------
 
         ca-certificates
+        cmake
         curl
         g++
         gcc
@@ -49,7 +50,9 @@ Current Packages
         git
         libtool
         make
+        mpich
         openssh-client
+        sudo
         wget
 
 ---
