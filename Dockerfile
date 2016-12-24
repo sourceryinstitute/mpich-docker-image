@@ -40,7 +40,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
      && rm -rf /var/lib/apt/lists/* /var/log/* /tmp/* \
      && echo "export PATH=\"$MPI_HOME/bin:\$PATH\"" >> /etc/bash.bashrc \
      && printf "\
-         sourceryinstitute/docker-base  Copyright (C) 2016 Sourcery Institute \n\
+         sourceryinstitute/mpich-docker-image  Copyright (C) 2016 Sourcery Institute \n\
          This program comes with ABSOLUTELY NO WARRANTY.\n\
          This is free software, and you are welcome to redistribute it\n\
          under certain conditions.\n\
@@ -63,7 +63,7 @@ RUN  DEBIAN_FRONTEND=noninteractive \
           org.label-schema.vcs-url="$VCS_URL" \
           org.label-schema.vendor="Sourcery Institute" \
           org.label-schema.license="BSD-3-Clause" \
-          org.label-schema.docker.cmd="docker run -v $(pwd):/workdir -i -t sourceryinstitute/docker-base:latest"
+          org.label-schema.docker.cmd="docker run -v $(pwd):/workdir -i -t sourceryinstitute/mpich-docker-image:latest"
 
 ENTRYPOINT ["/bin/bash"]
 
